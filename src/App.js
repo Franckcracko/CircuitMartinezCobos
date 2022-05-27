@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Nav from './components/NavBar/NavBar.js';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+// import Counter from './components/counter.js';
+// import Button from './components/Button/Button.js'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Nav initial={0} />
+     <ItemListContainer text={'Holaa'}/>
+      {/* <Counter initial={10} title={'Contador'} /> */}
+
     </div>
   );
 }
