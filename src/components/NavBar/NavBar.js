@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { getSections } from '../../sectionnav';
 import './estilosNavBar.css';
 import CartWidget from './CartWidget';
-import Section from '../../Section/Section';
+import Section from '../Section/Section';
 const NavBar = () =>{
     const [sections, setSections] = useState([])
     

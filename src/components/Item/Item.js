@@ -9,7 +9,7 @@ const Item = (props) =>{
             </figure>                    
             <div class='contenido'>
                 <h4 className='titleItem'>{props.title}</h4>
-                <p className='descriptionItem'>{props.description}</p>
+                <p className='descriptionItem'>{props.description} <a href="#" style={{display:'block',color:'#4ad295'}}> leer mas..</a></p>
                 <span className='priceItem'>$ {props.price}</span>
                 <ItemCount value={count} onAdd={() => setCount(count +1)}/>
             </div>
