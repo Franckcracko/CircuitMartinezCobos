@@ -13,6 +13,10 @@ a, li{
     font-family: 'Roboto',sans-serif;
     color: #fff;
 }
+.logo-header{
+    display: flex;
+    align-content: center;
+}
 .logo-header img{
     width: 50px;
 }
