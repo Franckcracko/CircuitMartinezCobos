@@ -1,17 +1,7 @@
-import Item from "../Item/Item";
-import { useState, useEffect } from 'react';
-import { getProducts } from "../../asyncmock";
 import './Item.css';
+import Item from "../Item/Item";
 
-const ItemList = () =>{
-    const [products, setProducts] = useState([])
-    
-    useEffect(() =>{
-        getProducts().then((response) =>{
-            setProducts(response)
-        })
-    }, [])
-
+const ItemList = ({products}) =>{
     return(
         <div className="container_navs">
             {products.map( prod => <Item key={prod.id} {...prod}/>)}

@@ -1,0 +1,16 @@
+*{
+    color:#fff;
+}
+.titleDetail{
+    font-size: 3rem;
+}
+.imgDetail{
+    width: 20rem;
+    margin: 1.5rem;
+    padding: .5rem;
+    background-color: #4ad295;
+}
+.textDetail{
+    font-size: 1.2rem;
+
+}

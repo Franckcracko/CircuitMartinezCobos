@@ -1,26 +1,27 @@
-import { useState, useEffect } from 'react';
-import { getSections } from '../../sectionnav';
+import { NavLink } from 'react-router-dom';
 import './estilosNavBar.css';
 import CartWidget from './CartWidget';
-import Section from '../Section/Section';
+
 const NavBar = () =>{
-    const [sections, setSections] = useState([])
-    
-    useEffect(() =>{
-        getSections().then((response) =>{
-            setSections(response)
-        })
-    }, [])
+
     return(
         <>
         <header class="header">
+            
             <div class="logo-header">
                 <img src={"/images/logo.png"} alt="" />
-                <span style={{marginLeft:'.3rem'}}>Circuit</span>
+                <NavLink to = '/'>
+                    <span style={{marginLeft:'.3rem'}}>Circuit</span>
+                </NavLink>
             </div>
             <nav class="nav-menu">
                 <ul>
-                    {sections.map( sect => <Section key={sect.id} {...sect}/>)}
+                    <NavLink to={'/'} className={({ isActive }) => isActive ? 'Activo' : 'Inactivo' }>Inicio</NavLink>
+                    <NavLink to={'/category/celulares'} className={({ isActive }) => isActive ? 'Activo' : 'Inactivo' }>Celulares</NavLink>
+                    <NavLink to={'/category/tablets'} className={({ isActive }) => isActive ? 'Activo' : 'Inactivo' }>Tablets </NavLink>
+                    <NavLink to={'/category/computadoras'} className={({ isActive }) => isActive ? 'Activo' : 'Inactivo' }>Computadoras </NavLink>
+                    <NavLink to={'/category/laptops'} className={({ isActive }) => isActive ? 'Activo' : 'Inactivo' }>Laptops</NavLink>
+                    <NavLink to={'/category/quienes_somos?'} className={({ isActive }) => isActive ? 'Activo' : 'Inactivo' }>Quienes Somos?</NavLink>
                    <CartWidget />
                 </ul>
             

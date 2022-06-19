@@ -5,7 +5,7 @@ const products = [
         description:'Gabinete, Factor de Forma ATX, Micro ATX y Mini ITX, Panel de Cristal Templado Frontal y Lateral, sin Fuente de Poder',
         price:13662.06,
         stock:50,
-        category:'pc gamer',
+        category:'computadoras',
         pictureUrl:'https://m.media-amazon.com/images/I/614q-EzXbnL._AC_SX425_.jpg'
     },
     {
@@ -14,7 +14,7 @@ const products = [
         description:'Memoria RAM (128 GB/6 GB, doble SIM, color amarillo',
         price:3999.99,
         stock:50,
-        category:'celular',
+        category:'celulares',
         pictureUrl:'https://m.media-amazon.com/images/I/51dkoYpSsmS._AC_SX425_.jpg'
 
     },
@@ -24,7 +24,7 @@ const products = [
         description:'AMD Ryzen 3 8 GB RAM 256 GB SSD Plata',
         price:10299 ,
         stock:10,
-        category:'laptop',
+        category:'laptops',
         pictureUrl:'https://cdn1.coppel.com/images/catalog/pm/2258773-1.jpg'
     },
     {
@@ -33,7 +33,7 @@ const products = [
         description:'Gabinete, Factor de Forma ATX, Micro ATX y Mini ITX, Panel de Cristal Templado Frontal y Lateral, sin Fuente de Poder',
         price:13662.06,
         stock:50,
-        category:'pc gamer',
+        category:'computadoras',
         pictureUrl:'https://m.media-amazon.com/images/I/614q-EzXbnL._AC_SX425_.jpg'
     },
     {
@@ -42,7 +42,7 @@ const products = [
         description:'Memoria RAM (128 GB/6 GB, doble SIM, color amarillo',
         price:3999.99,
         stock:50,
-        category:'celular',
+        category:'celulares',
         pictureUrl:'https://m.media-amazon.com/images/I/51dkoYpSsmS._AC_SX425_.jpg'
 
     },
@@ -52,7 +52,7 @@ const products = [
         description:'AMD Ryzen 3 8 GB RAM 256 GB SSD Plata',
         price:10299 ,
         stock:10,
-        category:'laptop',
+        category:'laptops',
         pictureUrl:'https://cdn1.coppel.com/images/catalog/pm/2258773-1.jpg'
     }
 ]
@@ -60,6 +60,21 @@ export const getProducts = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(products)
-        }, 2000);
+        }, 1000);
+    })
+}
+export const getProductsByCategory = (categoryId) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(products.filter(prod => prod.category === categoryId))
+        }, 1000)
+    })
+}
+
+export const getProductById = (id) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(products.find(prod => prod.id === id))
+        }, 1000)
     })
 }

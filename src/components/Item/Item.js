@@ -1,17 +1,17 @@
-import ItemCount from "../ItemCount/ItemCount"
-import React, { useState } from 'react';
-const Item = (props) =>{
-    const [count, setCount] = useState(1)
+import { Link } from "react-router-dom";
+
+
+const Item = ({title, id , category, description, price,pictureUrl}) =>{
+
     return (
-        <div className={'card'} key={props.id} category={props.category} >
+        <div className={'card'} key={id} category={category} >
             <figure>
-                <img src={props.pictureUrl} />
+                <img src={pictureUrl} />
             </figure>                    
             <div class='contenido'>
-                <h4 className='titleItem'>{props.title}</h4>
-                <p className='descriptionItem'>{props.description} <a href="#" style={{display:'block',color:'#4ad295'}}> leer mas..</a></p>
-                <span className='priceItem'>$ {props.price}</span>
-                <ItemCount value={count} onAdd={() => setCount(count +1)}/>
+                <h4 className='titleItem'>{title}</h4>
+                <p className='descriptionItem'>{description}<Link to={`/detail/${id}`}><span style={{display:'block',color:'#4ad295'}}> leer mas..</span></Link></p>
+                <span className='priceItem'>$ {price}</span>
             </div>
         </div>
     )
