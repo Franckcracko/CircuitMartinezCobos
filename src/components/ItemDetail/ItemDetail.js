@@ -1,9 +1,15 @@
 import './ItemDetail.css'
 import ItemCount from "../ItemCount/ItemCount"
-const ItemDetail = ({ id, title, pictureUrl,  description, price, setCart, stock, cart}) => {
+import { useContext } from 'react'
+import CartContext from '../../context/CartContext'
+
+const ItemDetail = ({ id, title, pictureUrl,  description, price, stock, }) => {
+    
+    const { addItem, clearItems } = useContext(CartContext)
+    
     const handleOnAdd = (quantity) =>{
         console.log(`Se Agregaron ${quantity} ${title}`);
-        setCart([...cart, {id, title, price, quantity}])
+        addItem({id, title, price, quantity})
     }
     return (
         <>
@@ -13,6 +19,7 @@ const ItemDetail = ({ id, title, pictureUrl,  description, price, setCart, stock
             <p className={'textDetail'}>{description}</p>
             <span>{price}</span>
             <ItemCount stock={stock} onAdd={handleOnAdd}/>
+            <button onClick={clearItems}>Borrar</button>
         </>
         )
 }
