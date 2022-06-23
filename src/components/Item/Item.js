@@ -5,9 +5,9 @@ const Item = ({title, id , category, description, price,pictureUrl}) =>{
     return (
         <div className={'card'} key={id} category={category} >
             <figure>
-                <img src={pictureUrl} />
+                <img src = {pictureUrl} />
             </figure>                    
-            <div class='contenido'>
+            <div className='contenido'>
                 <h4 className='titleItem'>{title}</h4>
                 <p className='descriptionItem'>{description}<Link to={`/detail/${id}`}><span style={{display:'block',color:'#4ad295'}}> leer mas..</span></Link></p>
                 <span className='priceItem'>$ {price}</span>

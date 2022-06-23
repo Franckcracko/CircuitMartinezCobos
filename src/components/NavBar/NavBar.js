@@ -6,15 +6,15 @@ const NavBar = () =>{
 
     return(
         <>
-        <header class="header">
+        <header className="header">
             
-            <div class="logo-header">
+            <div className="logo-header">
                 <img src={"/images/logo.png"} alt="" />
                 <NavLink to = '/'>
                     <span style={{marginLeft:'.3rem'}}>Circuit</span>
                 </NavLink>
             </div>
-            <nav class="nav-menu">
+            <nav className="nav-menu">
                 <ul>
                     <NavLink to={'/'} className={({ isActive }) => isActive ? 'Activo' : 'Inactivo' }>Inicio</NavLink>
                     <NavLink to={'/category/celulares'} className={({ isActive }) => isActive ? 'Activo' : 'Inactivo' }>Celulares</NavLink>

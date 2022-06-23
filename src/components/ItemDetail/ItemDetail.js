@@ -1,25 +1,30 @@
 import './ItemDetail.css'
 import ItemCount from "../ItemCount/ItemCount"
-import { useContext } from 'react'
+import { useState ,useContext } from 'react'
 import CartContext from '../../context/CartContext'
+import { Link } from 'react-router-dom'
 
 const ItemDetail = ({ id, title, pictureUrl,  description, price, stock, }) => {
-    
+    const [quantityAdded, setQuantityAdded] = useState(0)
+
     const { addItem, clearItems } = useContext(CartContext)
     
     const handleOnAdd = (quantity) =>{
         console.log(`Se Agregaron ${quantity} ${title}`);
         addItem({id, title, price, quantity})
+        setQuantityAdded(quantity)
     }
     return (
         <>
             <h2>Card de detalle</h2>
             <h3 className={'titleDetail'}>{title }</h3>
-            <img className={'imgDetail'} src={pictureUrl} ></img>
+            <img className={'imgDetail'} src={pictureUrl} />
             <p className={'textDetail'}>{description}</p>
             <span>{price}</span>
-            <ItemCount stock={stock} onAdd={handleOnAdd}/>
-            <button onClick={clearItems}>Borrar</button>
+            {quantityAdded === 0            
+                ?<ItemCount stock={stock} onAdd={handleOnAdd}/>
+                : <Link to='/cart'>Terminar Compra</Link>
+            }
         </>
         )
 }
