@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom'
 const ItemDetail = ({ id, title, pictureUrl,  description, price, stock, }) => {
     const [quantityAdded, setQuantityAdded] = useState(0)
 
-    const { addItem, clearItems } = useContext(CartContext)
+    const { addItem } = useContext(CartContext)
     
     const handleOnAdd = (quantity) =>{
-        console.log(`Se Agregaron ${quantity} ${title}`);
+
         addItem({id, title, price, quantity})
         setQuantityAdded(quantity)
     }

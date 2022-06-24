@@ -16,8 +16,8 @@ export const CartProvider = ({ children }) =>{
         setTotalQuantity(totalQuantity)
     }, [cart])
     
-    const clearItems = () =>{
-        setCart(cart.clear());
+    const clearCart = () =>{
+        setCart([]);
     }
     const addItem = (productToAdd) =>{
       if(!isInCart( productToAdd.id )){
@@ -39,7 +39,9 @@ export const CartProvider = ({ children }) =>{
             cart,
             totalQuantity,
             addItem, 
-            removeItem, 
+            removeItem,
+            isInCart,
+            clearCart 
             }}>
             { children }
         </CartContext.Provider>  

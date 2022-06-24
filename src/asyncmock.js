@@ -13,7 +13,7 @@ const products = [
         title:'xiaomi poco m3 pro 5g',
         description:'Memoria RAM (128 GB/6 GB, doble SIM, color amarillo',
         price:3999.99,
-        stock:50,
+        stock:25,
         category:'celulares',
         pictureUrl:'https://m.media-amazon.com/images/I/51dkoYpSsmS._AC_SX425_.jpg'
 
