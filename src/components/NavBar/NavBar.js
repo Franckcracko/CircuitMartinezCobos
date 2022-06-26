@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './estilosNavBar.css';
 import CartWidget from './CartWidget';
 
@@ -22,7 +23,7 @@ const NavBar = () =>{
                     <NavLink to={'/category/computadoras'} className={({ isActive }) => isActive ? 'Activo' : 'Inactivo' }>Computadoras </NavLink>
                     <NavLink to={'/category/laptops'} className={({ isActive }) => isActive ? 'Activo' : 'Inactivo' }>Laptops</NavLink>
                     <NavLink to={'/category/quienes_somos?'} className={({ isActive }) => isActive ? 'Activo' : 'Inactivo' }>Quienes Somos?</NavLink>
-                   <CartWidget />
+                    <Link to='/cart'><CartWidget /></Link>
                 </ul>
             
             </nav>

@@ -37,24 +37,6 @@ const ItemListContainerr = () => {
         }).finally(() =>{
             setLoading(false)
         })
-            
-        //  if(!categoryId) {
-        //     getProducts().then(prods => {
-        //         setProducts(prods)
-        //     }).catch(error => {
-        //         console.log(error)
-        //     }).finally(() => {
-        //         setLoading(false)
-        //     })
-        // } else {
-        //     getProductsByCategory(categoryId).then(prods => {
-        //         setProducts(prods)
-        //     }).catch(error => {
-        //         console.log(error)
-        //     }).finally(() => {
-        //         setLoading(false)
-        //     })
-        // }
     }, [categoryId])
 
     if(loading) {

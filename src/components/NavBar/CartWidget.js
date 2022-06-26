@@ -5,12 +5,12 @@ import CartContext from '../../context/CartContext';
 
 const CartWidget = () =>{
     const { totalQuantity, setTotalQuantity } = useContext(CartContext)
-
+    if(totalQuantity > 0 ) { 
     return(
         <div className="cartWidget">
             <FontAwesomeIcon style={{width:'16px', color:'white'}} icon={faCartShopping} />
             <span style={{fontSize:'.8rem',marginLeft:'.5rem', color:'white'}}>{totalQuantity}</span>
         </div>
-        )
+        )}
 }
 export default CartWidget;

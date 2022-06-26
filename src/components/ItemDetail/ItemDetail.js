@@ -5,25 +5,39 @@ import CartContext from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 
 const ItemDetail = ({ id, title, pictureUrl,  description, price, stock, }) => {
-    const [quantityAdded, setQuantityAdded] = useState(0)
+    const [confirmPurchase, setConfirmPurchase] = useState(false)
 
     const { addItem } = useContext(CartContext)
     
     const handleOnAdd = (quantity) =>{
-
         addItem({id, title, price, quantity})
-        setQuantityAdded(quantity)
+        setConfirmPurchase(!confirmPurchase)
+    }
+    const styleButton = {
+        background: '#4ad295',
+        textDecoration: 'none',
+        display: 'inline-block',
+        padding: '5px',
+        marginTop: '10px',
+        marginBottom: '10px',
+        color: '#fff',
+        border: '1px solid #4ad295',
+        borderRadius: '4px'
     }
     return (
         <>
-            <h2>Card de detalle</h2>
             <h3 className={'titleDetail'}>{title }</h3>
             <img className={'imgDetail'} src={pictureUrl} />
             <p className={'textDetail'}>{description}</p>
-            <span>{price}</span>
-            {quantityAdded === 0            
-                ?<ItemCount stock={stock} onAdd={handleOnAdd}/>
-                : <Link to='/cart'>Terminar Compra</Link>
+            <span style={{color:'grey',fontSize:'2rem'}}> PRECIO: {price}</span>
+            {confirmPurchase == false            
+                ?
+                    <ItemCount stock={stock} onAdd={handleOnAdd}  />
+                : <div>
+                    <h1>Desea Finalizar su Compra?</h1>
+                    <Link to='/cart'> <button style={styleButton} >Si </button></Link>
+                    <button style={styleButton} onClick={()=> setConfirmPurchase(false)}> No</button>
+                </div>  
             }
         </>
         )
