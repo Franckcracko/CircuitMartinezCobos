@@ -1,0 +1,12 @@
+.btnChangeValue {
+    width: 2rem;
+    font-size: 1.25rem;
+}
+.addItems{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btnAdd{
+    font-size: 1.25rem;
+}

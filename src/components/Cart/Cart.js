@@ -1,17 +1,12 @@
+import './stylesCart.css'
 const Cart = ({id,title,quantity,price, onRemove}) =>{
     return(
-        <div key={id}>
-            <header> <h1>Nombre:</h1> {title}</header>
-            <section> 
-                <h1>Cantidad:</h1> {quantity}
-                <h1>Precio por Unidad:</h1> { price / quantity }
-                <h1>Subtotal:</h1> { price }
-            </section>
-            <footer> 
-                <button onClick={() => {               
-                    onRemove(id) 
-                }}>ELIMINAR</button>
-            </footer>
+        <div className='itemContainer' key={id}>
+            <h1>Nombre: <span>{title}</span></h1> 
+            <h1>Cantidad: <span>{quantity}</span></h1>
+            <h1>Precio por Unidad: <span>${ price / quantity }</span></h1> 
+            <h1>Subtotal: <span>${ price }</span></h1> 
+            <button className='ghostButton' onClick={() => onRemove(id) } > ELIMINAR </button>
         </div>
     )
 }

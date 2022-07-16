@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getProducts, getProductsByCategory } from "../../asyncmock";
+
 import ItemList from "../ItemList/ItemList"
 import { useParams } from 'react-router-dom';
 // getDocs : Traer documentos de la base de datos.
@@ -16,16 +16,14 @@ const ItemListContainerr = () => {
     const { categoryId } = useParams()
 
     useEffect(() =>{
-        
         setLoading(true)
-
+            
         //collection pide de donde sacar la base de datos y su referencia
         const collectionRef = categoryId ? (
             query(collection(db, 'products'), where('category', '==', categoryId))
         ) : ( collection(db, 'products') )
-
+    
         getDocs(collectionRef).then(response =>{
-            console.log(response)
             //response contiene los productos 
             const productsFormatted = response.docs.map(doc =>{
                 //obtengo el id y el data es donde se encuentran los otros campos del producto
@@ -40,7 +38,11 @@ const ItemListContainerr = () => {
     }, [categoryId])
 
     if(loading) {
-        return <h1>Cargando...</h1>
+        return(
+            <div id="contenedor">
+                <div className="loader" id="loader">Loading...</div>
+            </div>
+        )
     }
     return(
         <>

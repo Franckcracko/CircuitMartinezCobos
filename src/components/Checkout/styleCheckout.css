@@ -1,0 +1,79 @@
+.formCheckout{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    margin-top: 2rem;
+    background-color: #222;
+    padding: 3rem 4rem;
+    padding-bottom: 4rem;
+}
+.col_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.col_1{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    margin:2rem 0;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.col_2{
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+button{
+    font-size: 2rem;
+}
+input{
+    margin: 2rem 0;
+    width: 40rem;
+    height: 3rem;
+    color:#000;
+    padding: .5rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+.exit{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.link{
+    font-size: 5rem;
+    transition: all 400ms ease;
+}
+.link:hover{
+    color: #4ad295;
+}
+
+.listProducts{
+    font-size: 2rem;
+}
+
+.divContainerCheckout{
+    display: flex;
+    margin: 2rem;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divContainerCheckout ul{
+    font-size: 2rem;
+}
+
+.divContainerCheckout h3{
+    font-size: 3rem;
+
+}

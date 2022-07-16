@@ -1,0 +1,19 @@
+.itemContainer{
+    margin: 1rem 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    padding: 1rem 1.5rem;
+}
+.itemContainer h1{
+    font-size: 1.5rem;
+}
+h1 span{
+    margin-right: 2rem;
+    font-size: 1.3rem;
+}
+.itemContainer button{
+    font-size: 1.1rem;
+    margin-left: auto;
+}

@@ -24,23 +24,22 @@ export const CartProvider = ({ children }) =>{
     const addItem = ({id,title,price,quantity}) =>{
         let totalPrice = 0
         totalPrice = quantity * price
+        
         if(!isInCart( id )){
             setCart([...cart, {id,title,quantity,price: totalPrice }])
-        }else{
+        }
+        
+        else{
             const prodFilter = cart.find(prod => prod.id === id)
             prodFilter.quantity += quantity
             prodFilter.price += totalPrice
             setCart([...cart])
          }
-        console.log(cart)
-         
     }
     
     const removeItem = (id) =>{
         const cartWithoutProduct = cart.filter (prod => prod.id !== id )
         setCart(cartWithoutProduct) 
-        console.log(id)
-        console.log(cartWithoutProduct)
     }
     
     const isInCart = (id) =>{

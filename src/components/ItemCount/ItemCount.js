@@ -1,5 +1,5 @@
-import './ItemCount.css'
 import React, { useState } from 'react';
+import './stylesItemCount.css'
 const ItemCount = ({stock = 0, initial = 1, onAdd}) =>{
 
     const [quantity, setQuantity] = useState(initial)
@@ -15,14 +15,19 @@ const ItemCount = ({stock = 0, initial = 1, onAdd}) =>{
            setQuantity(quantity - 1)
         }     
     }
+
+    const styleValue = {
+        width: '3rem',
+        marginRight: '3rem'
+    }
     return(
-    <div className={'addItems'}>
+    <div className='addItems'>
         <div style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
-            <button className="ghostButton" onClick={decrement}>  -</button>
-                    <h4 className= 'itemValue'>{quantity}</h4>
-            <button className="ghostButton" onClick={increment}> + </button>
+            <button className="ghostButton btnChangeValue" onClick={decrement}> - </button>
+                <h3 className= { styleValue }> {quantity} </h3>
+            <button className="ghostButton btnChangeValue" onClick={increment}> + </button>
+            <button className={'ghostButton btnAdd'}  onClick={() => onAdd(quantity)} >Agregar</button>
         </div>
-        <button className={'ghostButton'}  onClick={() => onAdd(quantity)} >Agregar</button>
     </div>
     )
 }
